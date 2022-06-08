@@ -1,0 +1,14 @@
+.searchWrap {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchWrap label {
+  display: flex;
+  flex-direction: column;
+}
+.searchWrap input {
+  margin-top: 5px;
+  width: 150px;
+}
