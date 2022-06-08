@@ -37,11 +37,11 @@ const App = () => {
 
   const addContact = data => {
     if (
-      contacts.contacts.some(
+      contacts.some(
         contact => contact.name.toLowerCase() === data.name.toLowerCase()
       )
     ) {
-      alert(`${data.name} is already in contacts1`);
+      alert(`${data.name} is already in contacts`);
       return;
     }
     dispatch(actionCreators.addContact(data));
@@ -49,12 +49,12 @@ const App = () => {
 
   const filterContacts = () => {
     if (filter) {
-      const filtered = contacts.contacts.filter(contact =>
+      const filtered = contacts.filter(contact =>
         contact.name.toLowerCase().includes(filter.toLowerCase())
       );
       return filtered;
     }
-    return contacts.contacts;
+    return contacts;
   };
 
   const removeContact = id => {
@@ -71,7 +71,7 @@ const App = () => {
         <FormContact addContact={addContact} />
       </Section>
       <Section title={'Contacts'}>
-        {contacts.contacts.length ? (
+        {contacts.length ? (
           <>
             <SearchContact searchValue={filter} handleChange={handleChange} />
             <ContactsList
