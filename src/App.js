@@ -29,7 +29,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(operations.fetchContacts());
-  }, []);
+  }, [dispatch]);
 
   const addContact = data => {
     dispatch(operations.addContact(data));
