@@ -1,13 +1,14 @@
 import ContactsItem from '../ContactsItem/ContactsItem';
 
 const ContactsList = ({ contacts, removeContact }) => {
+  console.log(contacts);
   return (
     <ul>
-      {contacts.map(({ name, number, id }) => {
+      {contacts.map(({ name, phone, id }) => {
         return (
           <ContactsItem
             name={name}
-            number={number}
+            phone={phone}
             key={id}
             id={id}
             removeContact={removeContact}
